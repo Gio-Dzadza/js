@@ -1,0 +1,147 @@
+.buttonClass{
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 25px;
+}
+.buttonClass .button{
+    border-radius: 25px;
+    background: repeating-linear-gradient(
+            45deg,
+            #F0EDDA,
+            #DEDDD9 5px,
+            #FBFAF5 5px,
+            #E9FDFB 20px
+    );
+    font-weight: bold;
+}
+.buttonClass .button:focus{
+    outline: none;
+}
+
+.forma{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    margin: 1px auto;
+    border: 1px solid black;
+    background-color: #8fd19e;
+}
+.forma .Choose{
+    width: 50%;
+    margin-left: 25px;
+    margin-top: 25px;
+    font-size: 25px;
+    font-weight: bold;
+}
+.forma .HomeWork{
+    width: 50%;
+    margin: 30px auto;
+    background-color: #ffeeba;
+}
+
+.results{
+    width: 50%;
+    margin: 25px auto;
+    position: relative;
+}
+.results .homeworkCont{
+    flex-grow: 1;
+    border: 1px solid black;
+    height: 620px;
+    position: absolute;
+    width: 100%;
+}
+.results .homeworkCont .jsCode{
+    margin-left:25px;
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+.codeWritten1{
+    width: 50%;
+    font-weight: bold;
+    border: 1px dashed red;
+    position: absolute;
+    margin-left: 25px;
+    display: none;
+}
+.codeWritten2{
+    width: 50%;
+    font-weight: bold;
+    border: 1px dashed red;
+    position: absolute;
+    margin-left: 25px;
+    display: none;
+}
+.codeWritten3{
+    width: 50%;
+    font-weight: bold;
+    border: 1px dashed red;
+    position: absolute;
+    margin-left: 25px;
+    display: none;
+}
+.codeWritten4{
+    width: 50%;
+    font-weight: bold;
+    border: 1px dashed red;
+    position: absolute;
+    margin-left: 25px;
+    display: none;
+}
+.codeWritten5{
+    width: 50%;
+    font-weight: bold;
+    border: 1px dashed red;
+    position: absolute;
+    margin-left: 25px;
+    display: none;
+}
+.runner{
+    border-radius: 25px;
+    background-color: darkseagreen;
+    font-weight: bold;
+    position: absolute;
+    bottom: 5px;
+    left: 25px;
+}
+.runner:focus{
+    outline: none;
+}
+
+.result{
+    display: flex;
+    float: right;
+    width: 50%;
+    margin-top: 45px;
+    font-weight: bold;
+    position: relative;
+}
+.Result1{
+    position: absolute;
+    margin-left: 55px;
+    display: none;
+}
+.Result2{
+    position: absolute;
+    margin-left: 55px;
+    display: none;
+}
+.Result3{
+    position: absolute;
+    margin-left: 55px;
+    display: none;
+}
+.Result4{
+    position: absolute;
+    margin-left: 55px;
+    display: none;
+}
+.Result5{
+    position: absolute;
+    margin-left: 55px;
+    display: none;
+}
