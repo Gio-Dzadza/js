@@ -18,11 +18,11 @@
     </label>
     <select class="HomeWork" name="Homework" id="homeworkOption" onchange="myFunction()">
         <option value="nothing"></option>
-        <option value="homeWork1">დავალება 1 - სიმბოლო = 5 და მეტს</option>
-        <option value="homeWork2">დავალება 2 - დადებითი რიცხვები</option>
-        <option value="homeWork3">დავალება 3 - დადებითი რიცხვები მასივის მასივიდან</option>
-        <option value="homeWork4">დავალება 4 - getMax</option>
-        <option value="homeWork5">დავალება 5 - printName</option>
+        <option value="homeWork1">დავალება 1 - reduce ყოველი მეორე სიტყვა აპერქეისით</option>
+        <option value="homeWork2">დავალება 2 - filter შეიცავს M</option>
+        <option value="homeWork3">დავალება 3 - დავალება 2 arrow function</option>
+        <option value="homeWork4">დავალება 4 - map</option>
+        <option value="homeWork5">დავალება 5 - filter, map 18 წელს ზემოთ ასაკის სახელები</option>
     </select>
 </form>
 <div class="results">
@@ -33,60 +33,75 @@
         </label>
         <div class="codeWritten1" id="homework11">
                     <p>
-                        "let arr = ['javascript', 'php', 'c#', 'python', 'c++', 'kotlin', 'c', 'swift'];<br><br>
-                        for (let x = 0; x < arr.length; x++){<br>
-                        if(arr[x].length>=5){<br>
-                        console.log(arr[x])
-                        }
-                        }"
+                        let words = ['Lorem', 'ipsum', 'dolor', 'sit', 'amet', 'consectetur', 'adipiscing', 'elit.', 'Nullam', 'lectus', 'quam']<br><br>
+
+                        let result = words.reduce((acc, cur, index)=>{<br>
+                        if (index % 2 === 1){<br>
+                        acc = acc + cur.toUpperCase() + ' ';<br>
+                        } else{<br>
+                        acc= acc + cur + ' ';<br>
+                        }<br>
+                        return acc<br>
+                        },'')<br>
+                        console.log(result)
                     </p>
                 </div>
         <div class="codeWritten2" id="homework2">
                     <p>
-                        let arr2 = [2, -3, 5, 11, 1, -30, -11, 100, -1, -3, -4];<br>
-                        for (let x = 0; x< arr.length; x++){<br>
-                        if(arr[x]>0){<br>
-                        console.log(arr2[x])
-                        }
-                        }
+                        let words1 = ['Madrid', 'Rome', 'Berlin', 'Barcelona', 'Milan', 'Batumi']<br><br>
+
+                        let result1 = words1.filter((value)=>{<br>
+                        if (value.includes('m')){<br>
+                        return value<br>
+                        } else if (value.includes('M')){<br>
+                        return value<br>
+                        }<br>
+                        })<br>
+                        console.log(result1)
                     </p>
                 </div>
         <div class="codeWritten3" id="homework3">
                     <p>
-                        let arr3 = [[2, -3, 5, 11], [1, -30, -11, 100], [-1, -3, -4]];<br>
-                        for (let x in arr3){<br>
-                        for(let y in arr3[x]){<br>
-                        if(arr3[x][y]>0){<br>
-                        console.log(arr3[x][y])
-                        }
-                        }
-                        }
+                        let words2 = ['Madrid', 'Rome', 'Berlin', 'Barcelona', 'Milan', 'Batumi']<br>.filter((value)=> value.includes('m') || value.includes('M'));<br>
+                        console.log(words2)
                     </p>
                 </div>
         <div class="codeWritten4" id="homework4">
                     <p>
-                        let arr4 = [1, 15, 6, 30];<br>
-                        console.log(Math.max(...arr4));
+                        let items = [12, 'Google', 32, null, undefined, 'yahoo', 0, 'bing']<br><br>
+
+                        let result2 = items.map((value)=>{<br>
+                        if(typeof value === "number"){<br>
+                        return value * value<br>
+                        }else if (typeof value === "string"){<br>
+                        return value.toUpperCase()<br>
+                        }<br>
+                        return value<br>
+                        })<br>
+                        console.log(result2)
 
                     </p>
                 </div>
         <div class="codeWritten5" id="homework5">
                     <p>
-                        let user = {<br>
-                        firstname: 'giorgi',<br>
-                        lastname: 'saakadze',<br>
-                        age: 32,<br>
-                        isLoggedIn: true<br>
-                        }<br>
+                        let users = [<br>
+                        {name: 'giorgi', age: 16},<br>
+                        {name: 'levani', age: 90},<br>
+                        {name: 'nino', age: 30},<br>
+                        {name: 'otari', age: 11},<br>
+                        {name: 'mari', age: 28}<br>
+                        ]<br><br>
 
-                        function printName(x){<br>
-                        if(x.isLoggedIn === true){<br>
-                        console.log(x.firstname + ' ' + x.lastname)
-                        }<br>else {<br>
-                        console.log('false')
-                        }
+                        let result3 = users.filter((value)=>{<br>
+                        if (value.age >= 18){<br>
+                        return value<br>
                         }<br>
-                        printName(user)
+                        })<br>
+                        .map((value) => {<br>
+                        return value.name<br>
+                        })<br>
+
+                        console.log(result3.join(' '))
                     </p>
                 </div>
         <button class="runner" id="codeRunner" onclick="clickChange()">Run code</button>
@@ -94,30 +109,19 @@
     <div class="result">
         Result:
         <div class="Result1" id="result1">
-            javascript<br>
-            python<br>
-            kotlin<br>
-            swift<br>
+            Lorem IPSUM dolor SIT <br> amet CONSECTETUR adipiscing ELIT.<br> Nullam LECTUS quam
         </div>
         <div class="Result2" id="result2">
-            2<br>
-            5<br>
-            11<br>
-            1<br>
-            100
+            (4)<br>["Madrid", "Rome", "Milan", "Batumi"]
         </div>
         <div class="Result3" id="result3">
-            2<br>
-            5<br>
-            11<br>
-            1<br>
-            100
+            (4)<br>["Madrid", "Rome", "Milan", "Batumi"]
         </div>
         <div class="Result4" id="result4">
-            30
+            (8)<br>[144, "GOOGLE", 1024, null, undefined, <br>"YAHOO", 0, "BING"]
         </div>
         <div class="Result5" id="result5">
-            giorgi saakadze
+            levani nino mari
         </div>
     </div>
 </div>
